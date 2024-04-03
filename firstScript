@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <p id="demo"></p>
+
+    <script>
+      document.getElementById("demo").innerHTML = "Daniel";
+    </script>
+
+	<script>
+      document.write("Daniel");
+    </script>
+
+	<script>
+      alert("Daniel");
+    </script>
+    
+    <script>
+      console.log("Daniel");
+    </script>
+    
+  </body>
+</html> 
