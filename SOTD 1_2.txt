@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interviewee Information</title>
+</head>
+<body>
+  <script>
+    (function() {
+      (function() {
+        document.write("Interviewee Information Page<br /><br />");
+      })();
+
+      (function() {
+        const name = prompt("Enter the interviewee's name:");
+        document.write("Candidate name: " + name + "<br />");
+      })();
+
+      (function() {
+        const email = prompt("Enter the interviewee's email address:");
+        document.write("Candidate email address: " + email + "<br />");
+      })();
+
+      (function() {
+        const startDate = prompt("Enter the interviewee's available start date:");
+        document.write("Candidate available start date: " + startDate);
+      })();
+    })();
+  </script>
+</body>
+</html>
