@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaSript Test 5A</title>
+    <script language="JavaScript"> 
+    	function reveal() {
+        
+        	var firstName =
+document.uniqueFormName.elements[0].value;
+			var lastName =
+document.uniqueFormName.elements[1].value;   			 
+			var userEmail = 
+document.uniqueFormName.elements[2].value;
+      		var password = 
+document.uniqueFormName.elements[3].value;
+        	
+           	var output = "<h1>Customer Data</h1>"; 
+            output += "<p>" + firstName + " " + lastName + "</p>";
+            output += "<p>" + "Email: " + userEmail + "</p>";
+            output += "<p>" + "Password: " + password + "</p>";
+        
+			document.getElementById("output").innerHTML = output;
+        }
+	</script>
+</head>
+
+<body>
+<h2>SOTD03 - Login Form</h2>
+
+<form name ="uniqueFormName"> 
+
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br>
+  
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br>
+  
+  <label for="email">Email Address:</label>
+  <input type="text" id="email" name="email"><br>
+  
+  <label for="pword">Password:</label>
+  <input type="text" style="-webkit-text-security: circle;" id="pword" name="pword"><br>
+  
+    <input type="button" value="Submit" onclick="reveal()">
+</form> 
+
+  <div id="output"></div>
+</body>
+</html>
