@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaSript Test 5A</title>
+    <script language="JavaScript"> 
+    	function reveal() {
+        
+        	var color =
+document.madlibForm.elements[0].value;
+			var verb =
+document.madlibForm.elements[1].value;   			 
+			var emotion = 
+document.madlibForm.elements[2].value;
+      		var adjective = 
+document.madlibForm.elements[3].value;
+			var animal = 
+document.madlibForm.elements[4].value;
+        	
+           	var output = "<h1>Late home!</h1>"; 
+            output += "Today I rode in the " + color + " car and out of no where it suddenly " 
+			+ verb + ". Feeling " + emotion + " I started flying " + adjective 
+			+ " and made it back home to my " + animal + "!";
+        
+			document.getElementById("output").innerHTML = output;
+        }
+	</script>
+</head>
+
+<body>
+<h2>Daniel's MADLIB!</h2>
+
+<form name ="madlibForm"> 
+
+  <label for="getColor">Give me a color!-</label>
+  <input type="text" id="getColor" name="getColor"><br>
+  
+  <label for="getVerb">Now a verb! -</label>
+  <input type="text" id="getVerb" name="getVerb"><br>
+  
+  <label for="getEmotion">Emotion? -</label>
+  <input type="text" id="getEmotion" name="getEmotion"><br>
+  
+  <label for="getAdj">Adjective-</label>
+  <input type="text" id="getAdj" name="getAdj"><br>
+  
+  <label for="getAni">A cute animal!-</label>
+  <input type="text" id="getAni" name="getAni"><br>
+  
+    <input type="button" value="Submit" onclick="reveal()">
+</form> 
+
+  <div id="output"></div>
+</body>
+</html>
