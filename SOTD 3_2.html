@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Test 5A</title>
+<script language="JavaScript">
+function doorGame() {
+  // Variables
+  var userChoice = parseInt(document.getElementById("doorSelect").value);
+  var prize;
+
+  // Switch statement to represent users choice 1-3
+  switch (userChoice) {
+    case 1:
+      prize = "new Car";
+      break;
+    case 2:
+      prize = "Goat";
+      break;
+    case 3:
+      prize = "20 Dollar Bill";
+      break;
+    default:
+      prize = null;
+  }
+
+  // if/else statement to get proper input from door 1 to 3
+  if (prize) {
+    document.getElementById("result").innerHTML = "You won a " + prize + "!";
+  } else {
+    document.getElementById("result").innerHTML = "Please select a valid door.";
+  }
+}
+</script>
+</head>
+<body>
+<h2>Let's Make a Deal</h2>
+<form>
+  <label for="doorSelect">Choose a door:</label><br>
+  <select id="doorSelect">
+    <option value="1">Door #1</option>
+    <option value="2">Door #2</option>
+    <option value="3">Door #3</option>
+  </select>
+  <button type="button" onclick="doorGame()">Play Game</button>
+</form>
+<p id="result"></p>
+</body>
+</html>
