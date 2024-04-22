@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Test 5A</title>
+  <script language="JavaScript">
+    function numGame() {
+    
+      var secretNumber = Math.floor(Math.random() * 5) + 1;
+      var userGuess = parseInt(prompt("Guess my number between 1 thru 5"));
+
+      if (userGuess == secretNumber) {
+        alert("Congratulations! " + secretNumber + " was the correct guess!");
+      } else {
+        alert("Sorry, your guess was incorrect. The secret number was " + secretNumber + ".");
+      }
+    }
+    
+  </script>
+</head>
+<body>
+  <h2>Guess My Secret Number</h2>
+  <button onclick="numGame()">Start Game</button>
+</body>
+</html>
