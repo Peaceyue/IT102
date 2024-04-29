@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Blackjack</h1>
+    <script>
+	
+      // Local Varibles 
+	var card = 0;
+	var total = 0;
+	var dealer = 0;
+	var hitMe = true;
+
+
+    // If/Else loop for player's turn
+    while (hitMe) {
+    hitMe = prompt("Current total: " + total + ". Take a card? Y/N");
+		if (hitMe == "Y" || hitMe == "y") {
+			card = Math.ceil(11 * Math.random());
+			total += card;
+			alert("You drew a " + card + ". Your new total is " + total + ".");
+		} else {
+			hitMe = false;
+        }
+		
+	// If/Else loop for Player bust
+    if (total > 21) { 
+        alert("Bust! You went over 21. Game over.");
+        hitMe = false;
+        }
+      }
+
+      // Dealer's Turn randomzier
+    dealer = Math.ceil(11 * Math.random()) + Math.ceil(11 * Math.random());
+	alert("Your hand is worth " + total + ". Dealer got " + dealer + ".");
+    
+	if (total <= 21 && (total > dealer || dealer > 21)) {
+		alert("Congratulations! You win!");
+    } else if (total <= 21 && total == dealer) {
+		alert("It's a tie!");
+    } else {
+		alert("Sorry, you lose. Better luck next time!");
+      }
+	  
+    </script>
+  </body>
+</html>
