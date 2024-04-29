@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+  
+	// Local Varibles
+    var size;
+	var row;
+	var col;
+
+    // Prompt user for square size and checks for improper values
+    do {
+      size = parseInt(prompt("Enter a square size between 3 and 30:"));
+    } while (isNaN(size) || size < 3 || size > 30);
+
+	// Square Formatting opener
+    document.write("<pre>");
+
+    // Nested Loops for ASCII
+    for (row = 0; row < size; row++) {
+      for (col = 0; col < size; col++) {
+        if (row == 0 || row == size - 1 || col == 0 || col == size - 1) {
+          document.write("*");
+        } else {
+          document.write(" ");
+        }
+      }
+      document.write("</br>");
+    }
+
+	// Square Formatting closer
+    document.write("</pre>");
+	
+  </script>
+</body>
+</html>
