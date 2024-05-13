@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- HTML Table for Testing Purposes -->
+    <table id = "myTable" style="border: 10px solid red; font-size: 20px; font-weight: bold">
+      <tr id = "row1" style = "color: blue" >
+        <td id = "1.1" style = "border: 2px solid black">Row 1 Col 1</td>
+        <td id = "1.2" style = "border: 2px solid black">Row 1 Col 2</td>
+      </tr>
+    </table>
+
+    <!--Button to Launch a Function -->
+    <br><br>
+    <button type="submit" onclick = "changeTextColor()">Change Text Color</button>
+    <br><br>
+    <!--Add 2nd Button-->
+	<button type="submit" onclick = "changeFontSize()">Change Font Size</button>
+    <br><br>
+    <!--Add 3rd Button-->
+	<button type="submit" onclick = "borderThickness()">Change Border Size</button> 
+    <br><br>
+    <!--Add 4th Button-->
+	<button type="submit" onclick = "borderColor()">Change Border Color</button> 
+	
+    <script>
+      // First JavaScript Function
+      // Changes text color from blue to green and back again
+ 
+     function changeTextColor(){
+       var textcolor = document.getElementById("row1").style.color;
+       if (textcolor== "green"){
+         textcolor = "blue";
+       }else{
+         textcolor = "green";
+       }
+       document.getElementById("row1").style.color = textcolor;
+     }
+	 
+	 // Changes fontsize from 20px to 30x to back again 
+	 function changeFontSize() {
+        var font = document.getElementById("row1");
+        var fontsize = window.getComputedStyle(font, null).getPropertyValue('font-size');
+        if (fontsize == "20px") {
+          font.style.fontSize = "30px";
+        } else {
+          font.style.fontSize = "20px";
+        }
+      }
+	 
+	 // Changes inner border thickness from 2px to 4px back to 2px
+	 function borderThickness() {
+        var cells = document.querySelectorAll("#row1 td");
+        cells.forEach(function(cell) {
+          var borderThick = window.getComputedStyle(cell, null).getPropertyValue('border-width');
+          if (borderThick == "2px") {
+            cell.style.borderWidth = "4px";
+          } else {
+            cell.style.borderWidth = "2px";
+          }
+        });
+      }
+	  
+	 // Changes inner border color from 0,0,0 to red back to black 
+	 function borderColor() {
+        var cells = document.querySelectorAll("#row1 td");
+        cells.forEach(function(cell) {
+          var borderColor = window.getComputedStyle(cell, null).getPropertyValue('border-color');
+          if (borderColor == "rgb(0, 0, 0)") { 
+            cell.style.borderColor = "red";
+          } else {
+            cell.style.borderColor = "black";
+          }
+        });
+      }
+	 
+    </script>
+  </body>
+</html>
