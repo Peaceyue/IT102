@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Playing Card Object</title>
+    <script language="JavaScript">
+        // Card Constructor
+        function Card(suit, rank) {
+            // Set properties
+            this.suit = suit;
+            this.rank = rank;
+            this.isVisible = false;
+
+            // Method to show the card
+            this.show = function() {
+                this.isVisible = true;
+            };
+
+            // Method to hide the card
+            this.hide = function() {
+                this.isVisible = false;
+            };
+
+            // Method to display card details as a string, one being visible and another being not. 
+            this.display = function() {
+                if (this.isVisible) {
+                    return `Suit: ${this.suit}, Rank: ${this.rank}, Is Visible: ${this.isVisible}`;
+                } else {
+                    return `Suit: hidden, Rank: hidden, Is Visible: ${this.isVisible}`;
+                }
+            };
+        }
+
+        // Create the card1 and card2 objects
+        let card1 = new Card('Hearts', 'A');
+        let card2 = new Card('Spades', 'K');
+
+        // Function to display cards
+        function cardDisplay() {
+            document.getElementById('card1').innerHTML = card1.display();
+            document.getElementById('card2').innerHTML = card2.display();
+        }
+
+        // display of the cards
+        window.onload = cardDisplay;
+
+        // Function to toggle the visibility
+        function visibilityToggle() {
+            if (card1.isVisible) {
+                card1.hide();
+            } else {
+                card1.show();
+            }
+
+            if (card2.isVisible) {
+                card2.hide();
+            } else {
+                card2.show();
+            }
+
+            cardDisplay(); 
+        }
+    </script>
+</head>
+<body>
+    <h1>Card Objects</h1>
+    <div id="card1"></div>
+    <div id="card2"></div>
+    <button onclick="visibilityToggle()">Toggle Visibility</button>
+</body>
+</html>
