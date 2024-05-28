@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Card Deck</title>
+    <script language="JavaScript">
+    
+        // Card Creator Object
+        function Card(suit, rank) {
+            this.suit = suit;
+            this.rank = rank;
+            this.isVisible = false;
+        }
+
+        Card.prototype.show = function() {
+            this.isVisible = true;
+        }
+
+        Card.prototype.hide = function() {
+            this.isVisible = false;
+        }
+
+        // Initialize an array to store a deck of cards, suits and ranks. 
+        var deck = [];
+        var suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
+        var ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+
+        // Loop until the deck of 52 cards is created
+        for (var i = 0; i < suits.length; i++) {
+            for (var j = 0; j < ranks.length; j++) {
+                deck.push(new Card(suits[i], ranks[j]));
+            }
+        }
+
+        // Function to display the deck of cards
+        function displayDeck(deckToDisplay, elementId, title) {
+            var output = "<h1>" + title + "</h1><pre>";
+            for (var i = 0; i < deckToDisplay.length; i++) {
+                output += deckToDisplay[i].rank + " of " + deckToDisplay[i].suit + "\n";
+            }
+            output += "</pre>";
+            document.getElementById(elementId).innerHTML = output;
+        }
+
+        // Function to shuffle the deck
+        function shuffleDeck() {
+            deck.sort(function(a, b) {
+                return 0.5 - Math.random();
+            });
+            displayDeck(deck, "shuffledDeck", "Shuffled Deck of Cards");
+        }
+
+        // Display the original deck
+        window.onload = function() {
+            displayDeck(deck, "originalDeck", "Original Deck of Cards");
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Card Deck</h2>
+    <p>Click the button to shuffle the deck of cards.</p>
+
+    <input type="button" value="Shuffle Deck" onclick="shuffleDeck()">
+
+    <div id="originalDeck"></div>
+    <div id="shuffledDeck"></div>
+</body>
+</html>
